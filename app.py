@@ -15,7 +15,7 @@ app = Flask(__name__)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///users.db'
 
 # Add MySQL Database
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:MYSQLPassword123@localhost/mysql_users'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://ttomczyk:ttomczyk123@users.cn10audml9ef.eu-west-1.rds.amazonaws.com:3306/users'
 
 # Secret Key
 app.config['SECRET_KEY'] = "secret key"
