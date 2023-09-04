@@ -134,7 +134,7 @@ def get_no_of_recs():
 
 
 # Create a route decorator
-@app.route('/')
+@app.route('/db')
 def index():
     first_name = "John"
     stuff = "This is <strong>Bold</strong> Text"
