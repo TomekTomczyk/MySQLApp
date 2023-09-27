@@ -37,7 +37,7 @@ class Users(db.Model):
         return '<Name %r>' % self.name
 
 
-@app.route('/delete/<int:id>')
+@app.route('/db/delete/<int:id>')
 def delete(id):
     user_to_delete = Users.query.get_or_404(id)
     name = None
@@ -70,7 +70,7 @@ class UserForm(FlaskForm):
 
 
 # Update Database Record
-@app.route('/update/<int:id>', methods=['GET', 'POST'])
+@app.route('/db/update/<int:id>', methods=['GET', 'POST'])
 def update(id):
     form = UserForm()
     name_to_update = Users.query.get_or_404(id)
@@ -102,7 +102,7 @@ class NamerForm(FlaskForm):
     submit = SubmitField("Submit")
 
 
-@app.route('/user/add', methods=['GET', 'POST'])
+@app.route('/db/user/add', methods=['GET', 'POST'])
 def add_user():
     name = None
     form = UserForm()
@@ -126,7 +126,7 @@ def add_user():
                            users_count=users_count)
 
 
-@app.route('/getNoOfRecs', methods=['GET'])
+@app.route('/db/getNoOfRecs', methods=['GET'])
 def get_no_of_recs():
     users_count = Users.query.count()
     result = json.dumps(users_count)
@@ -134,7 +134,7 @@ def get_no_of_recs():
 
 
 # Create a route decorator
-@app.route('/')
+@app.route('/db')
 def index():
     first_name = "John"
     stuff = "This is <strong>Bold</strong> Text"
